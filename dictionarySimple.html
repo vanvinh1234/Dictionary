@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+    <style>
+        .content {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class = content>
+<h2 style="color: red;text-align: center">Dictionary simple</h2>
+<h3>List word you can translate: dog, cat, pig, chicken, cow, buffalo, horse.</h3>
+<form>
+    <input type="text" id="inputWord">
+    <input type="button" value="Translate" onclick="translateWord();"><br>
+    <p id="result">Result</p>
+</form>
+</div>
+    <script>
+        let engWord=['dog','cat','pig','chicken','cow','buffalo','horse'];
+        let vnWord=['chó','mèo','lợn','gà','bò','trâu','ngựa'];
+        function translateWord() {
+            let input = document.getElementById('inputWord').value;
+            for(i=0; i< engWord.length; i++){
+                if(input.toLowerCase()==engWord[i]){
+                    document.getElementById('result').innerHTML="Result is: " + vnWord[i];
+                    break;
+                }else{
+                    document.getElementById('result').innerHTML="The word doesn't exit";
+                }
+            }
+        }
+        
+    </script>
+</form>
+</body>
+</html>
